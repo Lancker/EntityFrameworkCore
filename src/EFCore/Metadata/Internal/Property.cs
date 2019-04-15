@@ -49,7 +49,7 @@ namespace Microsoft.EntityFrameworkCore.Metadata.Internal
             Check.NotNull(declaringEntityType, nameof(declaringEntityType));
 
             DeclaringEntityType = declaringEntityType;
-            ClrType = clrType;
+            ClrType = fieldInfo?.FieldType ?? clrType;
             _configurationSource = configurationSource;
             _typeConfigurationSource = typeConfigurationSource;
 
